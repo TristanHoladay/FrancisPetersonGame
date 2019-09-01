@@ -12,4 +12,3 @@ function opacEveryMapCell(){
 	$('a1').classList.remove("opacMapCell");
 	}
 }
-

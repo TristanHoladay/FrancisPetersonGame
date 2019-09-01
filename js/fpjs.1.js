@@ -2,12 +2,15 @@ function $(id) {
     return document.getElementById(id); 
 }
 
-
 function keyUp(){
     var key = event.keyCode;
-        if(key == 13){alert('you Pressed Enter!!!');}
+        // if(key == 13){alert('you Pressed Enter!!!');}
+        if(key == 73){$('chatInput').classList.toggle('hide');}
 }
 
+function chatToMainText(){
+    if(key == 13){$('mainText').innerHTML = $('chatInput').innerHTML;}
+}
 
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
                 'n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -33,6 +36,10 @@ var ArrSpeakers = [
 var ArrSounds = [
 "sounds\\testsound.wav"
 ];
+
+function testBtn(){
+    $('mainText').innerHTML = "this is the new striiing.";
+}
 
 function txtUp() {
     txtPos += 1;
@@ -60,7 +67,7 @@ function typeOut(text, speed){
     var printInterval = setInterval(iterate, speed);
 
     function iterate() {
-        if(i > text.length){ clearInterval(printInterval); }
+        if(i > text.length){ clearInterval(printInterval);}
         else{$('mainText').innerHTML += text.charAt(i); i++;}
     }
 }

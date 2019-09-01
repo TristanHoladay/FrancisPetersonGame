@@ -53,6 +53,10 @@ body {
     justify-content: center;
 }
 
+#chatInput{
+    
+}
+
 #subDisp {
     position: absolute;
     bottom: 0%;

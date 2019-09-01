@@ -56,7 +56,7 @@
 		<img id=subMC>
 		<canvas id="mainCanvas"><img id="Mimg"></canvas>
 		<div id="btnBar" align="center">
-			<button id="" type="button" onclick="testBtn()">Test Button</button>
+			<button id="testBtn" type="button" onclick="testBtn()">Test Button</button>
 			<button id="" type="button" onclick="playSound()">Play Sound</button>
 	    	<button id="txtDwnBtn" type="button" onclick="txtDwn()">Text Down</button>
 	    	<button id="txtUpBtn" type="button" onclick="txtUp()">Text Up</button>
@@ -78,7 +78,9 @@
 		<!-- sub Display, with speaker left and right and mainText -->
 		<div id="subDisp">
     		<canvas id="SLCanvas" style="background-color: yellow"><img id="SLimg"></canvas>
-			<span id="mainText">Hey this is text!!!ggfs dfgsdfg sdfgsdfg sdfgg dsasdfasdf asdf asdf asdf asdf sadf fg asdfklfsdfasdf j</span>
+			<span id="mainText">
+				<input id="chatInput" type="text" class="hide" onkeyup="chatToMainText()">
+			</span>
 			<canvas id="SRCanvas" style="background-color: yellow"><img id="SRimg"></canvas>
 		</div>
 	</div>		
