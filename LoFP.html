@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" onkeyup="keyUp()">
+<head>
+  <title>The legend of Francis Peterson</title>
+  <meta charset="utf-8" name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+    <!-- Bootstrap and CSS -->
+    <!-- <link rel="stylesheet" href="https://wwww.w3schools.com/w3css/4/w3.css"> -->
+    <!-- <script src="bootstrap\js\bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
+    <script src="js\tabs.js"></script>
+    <script src="js\fpjs.1.js"></script>
+    <script src="js\fp.island1.a1.js"></script>
+    <link rel="stylesheet" type="text/css" href="css\fpcss.css">
+    <link rel="stylesheet" type="text/css" href="css\fpstats.css">
+</head>
+
+<body onload="preload(); startMenu(); opentab('Tab1'); opacEveryMapCell()">
+
+<div id="header" class="text-center"><h4>The Legend of Francis Peterson: Chapter One</h4></div>
+
+<!-- Main Row -->
+<div id="mainRow">
+	<div id="Lsidebar">
+        <div class="statBox">
+        	<div class="statTitle">- Status -</div>
+            <div id="heaText"class="statText">health</div>
+			<div id="health" class="statBar"><br></div>
+            <div id="staText" class="statText">stamina</div>
+    		<div id="stamina" class="statBar"><br></div>
+            <div id="steText" class="statText">steam</div>
+    		<div id="steam" class="statBar"><br></div>
+            <div id="creText" class="statText">crew</div>
+    		<div id="crew" class="statBar"><br></div>
+            <div id="claText" class="statText">clams</div>
+            <div id="clams" class="statBar"><br></div>
+            <div id="golText" class="statText">gold</div>
+            <div id="gold" class="statBar"><br></div>
+        </div>
+        <div class=statBox>
+        	<div class="statTitle">Stats</div>
+            <div id="strText" class="statText">strength</div>
+			<div id="strength" class="statBar"><br></div>
+            <div id="touText" class="statText">toughness</div>
+    		<div id="toughness" class="statBar"><br></div>
+            <div id="agiText" class="statText">agility</div>
+    		<div id="agility" class="statBar"><br></div>
+            <div id="perText" class="statText">perception</div>
+    		<div id="perception" class="statBar"><br></div>
+            <div id="chaText" class="statText">strength</div>
+    		<div id="charisma" class="statBar"><br></div>
+        </div>
+    </div>
+
+		<!-- This is the main container -->
+	<div id="main">
+		<img id=subMC>
+		<canvas id="mainCanvas"><img id="Mimg"></canvas>
+		<div id="btnBar" align="center">
+			<button id="" type="button" onclick="testBtn()">Test Button</button>
+			<button id="" type="button" onclick="playSound()">Play Sound</button>
+	    	<button id="txtDwnBtn" type="button" onclick="txtDwn()">Text Down</button>
+	    	<button id="txtUpBtn" type="button" onclick="txtUp()">Text Up</button>
+	    	<button id="1Btn" type="button" onclick="healthUp(1)">Health Up</button>
+	    	<button id="2Btn" type="button" onclick="ouchHealth()">OUCH</button>
+	    	<button id="3Btn" type="button" onclick="death()">death</button>
+	    	<button id="4Btn" type="button" onclick="jwrite()">write journal</button>
+	    	<button id="5Btn" type="button" onclick="startMenu()">Start Menu</button>
+	    	<button id="6Btn" type="button" onclick="circle()">Circle</button>
+	    	<button id="7Btn" type="button" onclick="square(50, 50)">Square</button>
+	    	<button id="8Btn" type="button" onclick="typeOut('hey there whassup?', 30)">Type Out</button>
+	    	<button id="9Btn" type="button" onclick="drawSL()">Draw SL</button>
+	    	<button id="10Btn" type="button" onclick="drawSR()">Draw SR</button>
+	    	<button id="11Btn" type="button" onclick="flash($('subDisp'))">Flash</button>
+	    	<button id="12Btn" type="button" onclick="clearMC()">CLEAR</button>
+	    	<button id="13Btn" type="button" onclick="squareRightLoop(10, 10)">Square Right</button>
+		</div>
+
+		<!-- sub Display, with speaker left and right and mainText -->
+		<div id="subDisp">
+    		<canvas id="SLCanvas" style="background-color: yellow"><img id="SLimg"></canvas>
+			<span id="mainText">Hey this is text!!!ggfs dfgsdfg sdfgsdfg sdfgg dsasdfasdf asdf asdf asdf asdf sadf fg asdfklfsdfasdf j</span>
+			<canvas id="SRCanvas" style="background-color: yellow"><img id="SRimg"></canvas>
+		</div>
+	</div>		
+
+	<!-- Right Sidebar -->
+	<div id="Rsidebar">
+		<div class="tablinkBox">
+	    	<button class="tablink" onclick="opentab('Tab1')">Map</button>
+	    	<button class="tablink" onclick="opentab('Tab2')">Items</button>
+	    	<button class="tablink" onclick="opentab('Tab3')">Equip</button>
+		</div>
+
+		<div id="Tab1" class="tab">
+			<table id="map" class="rBox">
+				<tbody>
+					<tr>
+						<td id="a1">a1</td>
+						<td id="a2">a2</td>
+						<td id="a3">a3</td>
+						<td id="a4">a4</td>
+					</tr>
+					<tr>
+						<td id="b1">b1</td>
+						<td id="b2">b2</td>
+						<td id="b3">b3</td>
+						<td id="b4">c4</td>
+					</tr>
+					<tr>
+						<td id="c1">c1</td>
+						<td id="c2">c2</td>
+						<td id="c3">c3</td>
+						<td id="c4">c4</td>
+					</tr>
+					<tr>
+						<td id="d1">d1</td>
+						<td id="d2">d2</td>
+						<td id="d3">d3</td>
+						<td id="d4">d4</td>
+					</tr>
+				</tbody>
+			</table>
+		<div class="navBox rBox">
+			<button id=westBtn onclick="movePos('west')">WEST</button>
+			<button id=northBtn onclick="movePos('north')">NORTH</button>
+			<button id=southBtn onclick="movePos('south')">SOUTH</button>
+			<button id=eastBtn onclick="movePos('east')">EAST</button>
+		</div>
+	</div>
+
+
+		<div id="Tab2" class="tab">
+			<h2>Items</h2>
+			<p>this will be a grid of items in the inventory</p> 
+		</div>
+
+		<div id="Tab3" class="tab">
+			<h2>Equipment</h2>
+			<p>this will show equipped armor and weapons etc</p>
+			<ul>
+				<li>head</li>
+				<li>torso</li>
+				<li>legs</li>
+				<li>feet</li>
+				<li>weapon</li>
+				<li>accessory</li>
+			</ul>
+		</div>
+		<div id="jbox" class="text-center">
+		<div class="text-center">--- JOURNAL ---</div>
+		  	<textarea id="journal" readonly></textarea>
+		</div>
+	</div>
+</div>
+
+</body>
+    
+</html>

@@ -1,0 +1,63 @@
+.statBar {
+    margin-bottom: 2%;
+    line-height: 50%;
+}
+
+.statBox {
+    display: block-flex;
+    height: 50%;
+}
+
+.statTitle {
+    background-image: linear-gradient(black, #303030, black);
+    color: white;
+}
+
+.statText {
+    color: white;
+    background-image: linear-gradient(#888888, #303030);    
+}
+
+#strength {
+    background-image: linear-gradient(darkred, darkred, black);
+}
+
+#toughness {
+    background-image: linear-gradient(olive, olive, black);
+}
+
+#agility {
+    background-image: linear-gradient(darkturquoise, darkturquoise, black);
+}
+
+#perception {
+    background-image: linear-gradient(seagreen, seagreen, black);
+}
+
+#charisma {
+    background-image: linear-gradient(darkorange, darkorange, black);
+}
+
+#health {
+    background-image: linear-gradient(crimson, crimson, black);
+}
+
+#stamina {
+    background-image: linear-gradient(forestgreen, forestgreen, black);
+}
+
+#steam {
+    background-image: linear-gradient(aquamarine, aquamarine, black);
+}
+
+#crew {
+    background-image: linear-gradient(darkgoldenrod, darkgoldenrod, black);
+}
+
+#clams {
+    background-image: linear-gradient(coral, coral, black);
+}
+
+#gold {
+    background-image: linear-gradient(gold, gold, black);
+}
