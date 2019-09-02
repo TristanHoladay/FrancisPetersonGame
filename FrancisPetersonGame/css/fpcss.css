@@ -1,0 +1,187 @@
+* {
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkcyan;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+#header {
+    background-color: orange;
+    padding: 5px;
+}
+
+#mainRow {
+    background-color: cyan;
+}
+
+#Lsidebar {
+    background-color: #202020;
+    position: absolute;
+    width: 14%;
+    height: 90%;
+}
+
+#main {
+    position: absolute;
+    left: 15%;
+    width: 70%;
+    height: 90%;
+}
+
+#subMC {
+    position: absolute;
+    width: 100%;
+    max-height: 70%;
+}
+
+#mainCanvas{
+    position: absolute;
+    width: 100%;
+    max-height: 70%;
+}
+
+#btnBar {
+    position: absolute;
+    background-color: green;
+    width: 100%;
+    height: 10%;
+    bottom:20%;
+    justify-content: center;
+}
+
+#chatInput{
+    
+}
+
+#subDisp {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 20%;
+    background-image: linear-gradient(black, #303030, black);
+}
+
+#SLCanvas {   /*speaker left Canvas*/
+    position: absolute;
+    left: 0%;
+    width: 15%;
+    height: 100%;
+}
+
+#mainText {
+    position: absolute;
+    left: 17.5%;
+    width: 65%;
+    color: white;
+}
+
+#SRCanvas {   /*speaker right Canvas*/
+    position: absolute;
+    right: 0%;
+    width: 15%;
+    height: 100%;
+}
+
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: initial;
+}
+
+#Rsidebar {
+    background-color: tan;
+    position: absolute;
+    right: 1%;
+    width: 14vw;
+    height: 90vh;
+}
+
+.tablinkBox{
+    background-color: green;
+    height: 5vh;
+}
+
+.tablink{
+    height: 100%;
+}
+
+#map{
+    text-align: center;
+    position: absolute;
+    top:5%;
+    width: 100%;
+    height: 14vw;
+    background-image: url('IslandMap.png');
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    color: lime;
+    text-shadow: 2px 1px black;
+}
+
+
+.navBox {
+    position:absolute;
+    top:38%;
+    width: 100%;
+    height: 15%;
+    background-color: blue;
+}
+
+#westBtn {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+}
+#northBtn {
+    position: absolute;
+    left:30%;
+    width: 40%;
+    height: 50%;
+}
+#southBtn {
+    position: absolute;
+    top:50%;
+    left:30%;
+    width: 40%;
+    height: 50%;
+}
+#eastBtn {
+    position: absolute;
+    right: 0px;
+    width: 30%;
+    height: 100%;
+}
+
+.highlight {
+    outline:3px solid yellow;
+}
+
+.opacMapCell{
+    color: red;
+    background-image: radial-gradient(red, black);
+}
+
+#jbox {
+    position: absolute;
+    background-color: orange;
+    width: 100%;
+    height: 20%;
+    bottom: 0%;
+}
+
+#journal {
+    position: absolute;
+    left:2.5%;
+    bottom: 2.5%;
+    width: 95%;
+    height: 78%;
+    resize: none;
+    overflow-y: scroll;
+}
