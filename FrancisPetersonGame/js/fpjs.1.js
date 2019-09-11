@@ -2,14 +2,9 @@ function $(id) {
     return document.getElementById(id); 
 }
 
-function keyUp(){
-    var key = event.keyCode;
-        // if(key == 13){alert('you Pressed Enter!!!');}
-        if(key == 73){$('chatInput').classList.toggle('hide');}
-}
-
-function chatToMainText(){
-    if(key == 13){$('mainText').innerHTML = $('chatInput').innerHTML;}
+function chatToMainText(){ 
+    $('mainText').innerHTML.value = $('chatInput').innerHTML.value; 
+    $('chatInput').classList.add('hide');
 }
 
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
@@ -25,7 +20,7 @@ var txtPos = 0;
 var arrScreens = [];
 for(i=0;i<50;i++){
     arrScreens.push("images\\screens\\" + i + ".gif");
-    console.log(arrScreens[i]);
+    // console.log(arrScreens[i]);
 }
 
 var arrSpeakers = [
@@ -33,13 +28,13 @@ var arrSpeakers = [
 "images\\speakers\\possum.jpg",
 ];
 
+var arrOnScreen = [
+"images\\onscreen\\characters\\FP1.png"
+];
+
 var arrSounds = [
 "sounds\\testsound.wav"
 ];
-
-function testBtn(){
-    $('mainText').innerHTML = "this is the new striiing.";
-}
 
 function txtUp() {
     txtPos += 1;
@@ -64,6 +59,7 @@ function typeOut(text, speed){
     }
 }
 
+
 var sound;
 function preload() {
     for(i=0; i<arrSpeakers.length; i++) {
@@ -74,8 +70,12 @@ function preload() {
         var img = new Image();
         img.src = arrScreens[i];
     }
-
-    sound = new sound('sounds\\doorbuzz.ogg');
+    for(i=0; i<arrOnScreen.length; i++) {
+        var img = new Image();
+        img.src = arrOnScreen[i];
+    }
+    sound = new sound('sounds\\0.ogg');
+    startMenu();
 }
 
 function sound(src) {
@@ -93,7 +93,7 @@ function sound(src) {
     }    
 }
 
-function playSound(){
+function playSound() {
     sound.play();
 }
 
@@ -102,11 +102,12 @@ function startMenu() {
     update();
 }
 
-function flash(objectID) {   
-  var counter = 0;
-  var speed = 60;
-  var clip = setInterval(frame, speed);
-  function frame() {
+function flash(objectID) {
+
+    var counter = 0;
+    var speed = 60;
+    var clip = setInterval(frame, speed);
+    function frame() {
         if (counter == 6) {
         objectID.style.visibility = "visible"; 
         clearInterval(clip);
@@ -115,14 +116,9 @@ function flash(objectID) {
             objectID.style.visibility = "hidden";
             counter++;
             // console.log(counter);
-        } 
-        else if (counter % 2 != 0) {
+        } else {
+            counter++;
             objectID.style.visibility = "visible";
-            counter++;
-            // console.log(counter);
-        }
-        else {
-            counter++;
             // console.log(counter);
         }
     }
@@ -228,11 +224,12 @@ function changeHealth(amt) {
 }
 
 function death() {
-    clearCanvas($('mainCanvas'));
+    clearCanvas($('gCanvas'));
     $('subMC').src = arrScreens[6];
     $("health").style.width = "0%";
     $("main").style.background = "darkred";
     document.body.style.background = "red";
+
 }
 
 var jcounter = 0
@@ -242,9 +239,41 @@ function jwrite() {
         "\n- - - - - - - - - -\n" + $("journal").innerHTML
 }
 
-// function gameLoop() {
-//     requestAnimationFrame(update);
-//     console.log();
-// }
+function smashSpeaker(mover) {
+    var diff = parseInt($('subDisp').offsetWidth - $('SLimg').offsetWidth - $('SRimg').offsetWidth);
+    var origDiff = diff;
+    var pos = 0;
+    var val = "";
+    var amt = 65;
 
-// setInterval(gameLoop, 1000);
+    function movRt() {
+        console.log(diff); 
+        pos += amt;
+        diff -=amt;
+        val = pos + "px";
+        mover.style.left = val;
+
+        if (diff < -55) { 
+            flash($('SRimg'));
+            mover.style.left = "0px";
+        }
+        else { requestAnimationFrame(movRt); }
+    }
+
+    function movLt() {
+            pos += amt;
+            diff -=amt;
+            val = pos + "px";
+            mover.style.right = val;
+
+            if (diff < -55) { 
+                flash($('SLimg'));
+                mover.style.right = "0px";
+            }
+            else { requestAnimationFrame(movLt); }
+    }
+
+    if (mover == $('SLimg')) { movRt(); }
+    else if (mover == $('SRimg')) { movLt(); }
+    else {}
+}
